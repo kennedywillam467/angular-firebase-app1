@@ -13,52 +13,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>25</td>
-        <td>2</td>
-        <td>6547895621</td>
+      <tr *ngFor="let student of students">
+        <th scope="row">#</th>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.level}}</td>
+        <td>{{student.contqct}}</td>
         <td>
-          <a href="" class="text-success">
+          <a [routerLink]="[6]" class="text-success">
             <i class="fa fa-eye" aria-hidden="true"></i> view
           </a> /
-          <a [routerLink]="[2, 'edit']">
+          <a [routerLink]="[5, 'edit']">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
           </a> / 
           <a href="" class="text-danger">
             <i class="fa fa-trash" aria-hidden="true"></i> delete
           </a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Kamdjou</td>
-        <td>25</td>
-        <td>2</td>
-        <td>6547895621</td>
-        <td>
-          <a href="">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
-          </a> / 
-          <a href="" class="text-danger">
-            <i class="fa fa-trash" aria-hidden="true"></i> delete
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Marie</td>
-        <td>35</td>
-        <td>1</td>
-        <td>6547895621</td>
-        <td>
-            <a href="">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit
-            </a> / 
-            <a href="" class="text-danger">
-              <i class="fa fa-trash" aria-hidden="true"></i> delete
-            </a>
         </td>
       </tr>
     </tbody>

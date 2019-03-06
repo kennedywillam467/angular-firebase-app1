@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FirestoreSettingsToken} from '@angular/fire/firestore'; //add this
+import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +28,8 @@ import { EditstudentComponent } from './editstudent/editstudent.component';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FormsModule
   ],
   providers: [{ provide: FirestoreSettingsToken, useValue: {} }], //and this too
   bootstrap: [AppComponent]

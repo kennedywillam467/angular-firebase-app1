@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-students',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-  constructor() { }
+
+	students: any[] = [];
+
+
+  constructor(private db:AngularFirestore) { }
 
   ngOnInit() {
+  	this.getAllStudents();
+  }
+
+  getAllStudents(){
+  	this.db.collection('students').ref.get()
+  	.then((data)=>{
+  		data.forEach((student)=> this.students.push(student.data()
+  			))
+  	})
+  	.catch ( (error) => console.log('Error: ', error) );
   }
 
 }
